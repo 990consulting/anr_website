@@ -1,8 +1,12 @@
 +++
 title = "Test-Whitepaper"
-date = "2019-03-22T18:32:58+00:00"
+date = ""
 description = "created in forestry.io"
 tags = [""]
 +++
+
+
+![hero-image](/uploads/images/blog-img1.jpg)
+
 
 Test white paper

@@ -1241,6 +1241,10 @@ select:focus {
     color: #1a1a1a;
 }
 
+.blog-detail p img {
+    width: 100%;
+}
+
 .blog-detail p+ul {
     margin-bottom: 20px;
 }

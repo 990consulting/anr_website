@@ -16,9 +16,10 @@
                 <div class="blog-detail">
                     <h1>{{.Title}}</h1>
                     <h3>{{.Params.description}}</h3>
-                    <div class="date">{{ .Date.Format .Site.Params.date_format }}</div>
-                    {{ if isset .Params "thumbnail"}}
-                        <img src="{{.Site.BaseURL}}{{ .Params.thumbnail}}" style="width: 100%">
+                    {{ if isset .Params "date" }}
+                        {{ if .Params.date}}
+                        <div class="date">{{ .Date.Format .Site.Params.date_format }}</div>
+                        {{ end }}
                     {{ end }}
 
                     {{ .Content }}
