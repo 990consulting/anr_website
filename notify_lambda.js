@@ -41,3 +41,34 @@ function sendEmail (event, done) {
     };
     ses.sendEmail(params, done);
 }
+
+exports.handler = function (event, context) {
+    console.log('Received event:', event);
+    sendCheckoutEmail(event, function (err, data) {
+        context.done(err, null);
+    });
+};
+ 
+function sendCheckoutEmail (event, done) {
+    var params = {
+        Destination: {
+            ToAddresses: [
+                RECEIVER
+            ]
+        },
+        Message: {
+            Body: {
+                Text: {
+                    Data: 'name: ' + event.name + '\nemail: ' + event.email + '\npurpose: ' + event.purpose + '\naccept terms: ' + event.accept_terms,
+                    Charset: 'UTF-8'
+                }
+            },
+            Subject: {
+                Data: 'Website Referral Form: ' + event.name,
+                Charset: 'UTF-8'
+            }
+        },
+        Source: SENDER
+    };
+    ses.sendCheckoutEmail(params, done);
+}

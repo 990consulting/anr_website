@@ -1,0 +1,70 @@
+
+{{ partial "head.html" .}}
+
+{{ partial "nav.html" .}}
+<div class="main-content-wrap">
+	<section class="hero-section">
+		<div class="container">
+			<h1>Checkout</h1>
+			<div class="row">
+				<div id="checkout" class="checkout-form">
+					<div class="container">
+						<p id="form_submitted">
+							Thank you for your message. It has been sent
+						</p>
+						<form id="checkout_form" action="https://www.paypal.com/cgi-bin/webscr" method="post">
+							<div class="form-group">
+								<div class="form-label"><label for="ct_product">Product</label></div>
+								<div class="form-control"><p id="ct_product">Foundations and Grants dataset -- 1 year individual license</p></div>
+							</div>
+							<div class="form-group">
+								<div class="form-label"><label for="ct_price">Price</label></div>
+								<div class="form-control"><input type="text" name="ct_price" id="ct_price" required value="$495" disabled/></div>
+							</div>
+							<div class="form-group">
+								<div class="form-label"><label for="ct_name">Name</label></div>
+								<div class="form-control"><input type="text" name="ct_name" id="ct_name" required autofocus/></div>
+							</div>
+							<div class="form-group">
+								<div class="form-label"><label for="ct_email"> Email Address </label></div>
+								<div class="form-control"><input type="email" name="ct_email" id="ct_email" required /></div>
+							</div>
+							<div class="form-group textarea">
+								<div class="form-label"><label for="ct_purpose">Purpose</label></div>
+								<div class="form-control mt0"><textarea name="ct_purpose" id="ct_purpose"></textarea></div>
+							</div>
+							<div class="form-group terms">
+								<div class="form-control"><input type="checkbox" id="ct_terms" required></div>
+								<div class="form-label"><label for="ct_terms">I have read and accept the <a href="/license-agreement" target="_blank">License Agreement</a>.</label></div>
+							</div>
+							<input type="hidden" name="cmd" value="_xclick">
+							<input type="hidden" name="business" value="info@990consulting.com">
+							<input type="hidden" id="ct_product_val" name="item_name" value="">
+							<input type="hidden" id="ct_first_name_val" name="first_name" value="">
+							<input type="hidden" id="ct_last_name_val" name="last_name" value="">
+							<input type="hidden" id="ct_email_val" name="email" value="">
+							<input type="hidden" id="ct_price_val" name="amount" value="">
+							<input type="hidden" name="currency_code" value="USD">
+							<input type="hidden" name="button_subtype" value="services">
+                            <input type="hidden" name="no_note" value="0">
+                            <input type="hidden" name="cancel_return" value="https://appliednonprofitresearch.com/error/">
+                            <input type="hidden" name="return" value="https://appliednonprofitresearch.com/thank-you/">
+							<div class="form-btn">
+								<button id="pay_with_paypal" type="submit" class="submit-btn">Pay with PayPal</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<script>
+		window.addEventListener('load', function() {
+    document.getElementById("checkout_form").reset();
+})
+	</script>
+      
+    {{ partial "footer.html" .}}
+      
+    {{ partial "script.html" .}}
+    

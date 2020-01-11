@@ -7,7 +7,11 @@
 	    .visible-xs,
 	    .about-item-content img {
 	        display: none;
-	    }
+		}
+		.thank-you-page .page-content {
+			min-height: calc(100vh - 110px);
+		}
+
 	}
 	
 	@media (min-width: 992px) {
@@ -31,12 +35,24 @@
 			height: 100%;
 		}
 		
+		
 	}
 	
 	@media (min-width: 1200px) {
 	    .container {
 	        width: 1170px;
-	    }
+		}
+		.custom-bg:before {
+			content: url(../images/hero-bg-01.png);
+			position: absolute;
+			right: 0;
+			top: 60px;
+			height: 100%;
+			opacity: .9;
+		}
+		.thank-you-page .page-content {
+			min-height: calc(100vh - 85px);
+		}
 	}
 
 	@media (max-width:1399px) {
@@ -230,6 +246,13 @@
 		}
 		.apis-banner li .rightcontent {
             padding: 30px 0 30px 15px;
+		}
+		.thank-you-page .page-content h1 {
+			font-size: 26px;
+		}
+
+		.submit-btn {
+			font-size: 16px;
 		}
 		
 	}
@@ -944,6 +967,10 @@
 		
 		.header-wrap .logo a {
 			font-size: 22px;
+		}
+		#checkout_form .form-control input,
+		#checkout_form .form-control p {
+			font-size: 20px;
 		}
 	}
 

@@ -1623,7 +1623,8 @@ a,a:hover {
     text-decoration: none;
 }
 
-.hero-section {
+.hero-section,
+.custom-bg {
     background: url(../images/hero-bg.jpg);
     position: relative;
     z-index: 0;
@@ -1712,6 +1713,86 @@ a,a:hover {
 
 .p-0 {
     padding:0 !important;
+}
+
+/*========== Checkout-form ==========*/
+
+#checkout_form {
+    max-width: 850px;
+    widows: 100%;
+    margin: 0 auto;
+}
+
+#checkout_form label {
+    color: #1A1A1A;
+}
+
+#checkout_form .form-label,
+#checkout_form .form-group {
+    border-color: #1A1A1A;
+}
+
+#checkout_form .form-group {
+    display: -ms-flexbox;
+    display: flex;
+}
+
+#checkout_form .form-group p {
+    font-family: 'Roboto Condensed';
+    font-size: 24px;
+    font-weight: normal;
+    line-height: 1.2;
+    cursor: not-allowed;
+}
+
+#checkout_form .form-control input,
+#checkout_form .form-control textarea {
+    background: transparent;
+    color: #1A1A1A;
+}
+
+#checkout_form .form-control input:disabled {
+    cursor: not-allowed;
+}
+
+#checkout_form .form-control input [type="checkbox"] {
+    margin: 0;
+    padding: 0;
+    width: auto;
+}
+
+#checkout_form .terms .form-label {
+    border: none;
+    width: auto;
+    line-height: 1.2;
+}
+
+#checkout_form .terms label {
+    float: none;
+    width: auto;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+#checkout_form .terms a {
+    text-decoration: underline;
+}
+
+#checkout_form .terms a:hover {
+    text-decoration: none;
+}
+
+#checkout_form .terms .form-control {
+    max-width: 25px;
+    width: 100%;
+    padding: 0;
+    margin-top: 9px;
+}
+
+#checkout_form .terms .form-control input {
+    width: auto;
+    padding: 0;
+    margin: 0;
 }
 
 /*========================================
@@ -2077,4 +2158,45 @@ margin-right: auto;
 .blog-section .title span {
     font-size: 36px;
     font-weight: bold;
+}
+
+/*========================================
+    Thank You Page
+========================================*/
+
+.thank-you-page .page-content{
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.thank-you-page .page-content .inner-content {
+    text-align: center;
+    padding-top: 100px;
+    min-height: calc(100vh - 160px);
+    padding-left: 15px;
+    padding-right: 15px;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    position: relative;
+    z-index: 99;
+}
+
+.thank-you-page .page-content h1 {
+    margin-bottom: 30px;
+}
+
+.thank-you-page .page-content .submit-btn {
+    width: auto;
+    margin-top: 30px;
+    display: inline-block;
 }
