@@ -1834,7 +1834,17 @@ margin-right: auto;
     padding: 30px 15px 30px 60px;
 }
 
+.api-paragraph {
+    font-weight: 400;
+}
 
+.yellow-highlight {
+  text-shadow: 
+    -3px 0px 3px yellow,
+     3px 0px 3px yellow,
+     6px 0px 6px yellow,
+    -6px 0px 6px yellow;
+}
 .comingSoonSec{
     border-top: 3px solid #000;
     position: relative;
