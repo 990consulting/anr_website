@@ -1569,8 +1569,10 @@ figure.figureWithCaption figcaption p {
 }
 
 .blog-detail pre {
+    background-color: #eeeeee;
 	line-height: 1.8;
 	margin-bottom: 20px;
+    font-size: 10px;
 }
 
 .blog-detail ul ul {

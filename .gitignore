@@ -4,3 +4,4 @@ resources
 out
 err
 .DS_store
+.idea/

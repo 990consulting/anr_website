@@ -11,7 +11,10 @@ description = "Learn to extract, transform, and interpret data from the IRS 990 
 tags = ["dataset", "open government", "nonprofit technology", "open data", "data science"]
 thumbnail = "/uploads/efile_xml.png"
 title = "The IRS 990 e-file dataset: getting to the chocolatey center of data deliciousness"
+
 +++
+
+**Updated June 26, 2020**
 
 ## Background, or “What the hell am I looking at?”
 
@@ -86,7 +89,9 @@ This will speed up your analysis by an order of magnitude, but now you’re left
 
 The IRS’ [documentation concerning the AWS dataset](https://docs.opendata.aws/irs-990/readme.html) provides instructions for transferring the 990 filings individually by HTTPS. Doing that requires an [HTTPS handshake](https://robertheaton.com/2014/03/27/how-does-https-actually-work/) for every single filing. To speed things up, copy the filings using the [S3 protocol](https://aws.amazon.com/documentation/s3/), either via the [AWS command line interface](https://aws.amazon.com/cli/) or a library like [boto3](http://boto3.readthedocs.io/en/latest/).
 
-Either way, please don’t do anything that forces S3 to give you a directory listing, such as the “sync” or “ls” commands. There are millions of little files in a single directory.* This is not a good design, and that is going to be reflected in the performance of these commands. Instead, download an index file (in [JSON](https://s3.amazonaws.com/irs-form-990/index_2011.json) or [CSV](https://s3.amazonaws.com/irs-form-990/index_2011.csv)) from the IRS and then get each file (or “object”) explicitly.
+**UPDATE 2020-06-26: I no longer recommend using the IRS indices. Instead, I recommend listing the filings directly, using parallelism to speed things up. Read my why and how [here](/posts/2020/06/skip-the-irs-990-efile-indices/).**
+
+~~Either way, please don’t do anything that forces S3 to give you a directory listing, such as the “sync” or “ls” commands. There are millions of little files in a single directory.* This is not a good design, and that is going to be reflected in the performance of these commands. Instead, download an index file (in [JSON](https://s3.amazonaws.com/irs-form-990/index_2011.json) or [CSV](https://s3.amazonaws.com/irs-form-990/index_2011.csv)) from the IRS and then get each file (or “object”) explicitly.~~
 
 _* Technically, S3 doesn’t have files or folders. In practical terms, of course it does._
 
